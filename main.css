@@ -56,3 +56,15 @@ body{
     margin: 2em auto;
     width: 70%;
 }
+.humid-content, .wind-content{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.humidity img, .wind img{
+    width: 30%;
+}
+.humidity-value, .wind-value{
+    font-size: 2em;
+}
