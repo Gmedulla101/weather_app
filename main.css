@@ -46,8 +46,11 @@ body{
 .search button img{
     width: 70%;
 }
+.city-name{
+    font-size: 3em;
+}
 .temp{
-    font-size: 4em;
+    font-size: 2em;
 }
 
 .humidity-wind{
@@ -66,5 +69,5 @@ body{
     width: 30%;
 }
 .humidity-value, .wind-value{
-    font-size: 2em;
+    font-size: 1.3em;
 }
