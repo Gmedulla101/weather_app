@@ -71,3 +71,18 @@ body{
 .humidity-value, .wind-value{
     font-size: 1.3em;
 }
+
+/* SOME MEDIA QUERIES FOR SMALLER SCREENS */
+@media screen and (max-width: 460px) {
+  
+    .search{
+        width: 100%;
+    }
+    .search-bar{
+        width: 80%;
+    
+    }
+    .humidity-wind{
+        width: 100%;
+    }
+}

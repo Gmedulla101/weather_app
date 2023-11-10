@@ -5,7 +5,7 @@ const getWeather = async (cityName) => {
 
     //DYNAMICALLY CHANGING THE CONTENTS OF THE WEATHER INFORMATION
     document.querySelector(".city-name").textContent = weatherData.sys.country + ", " + weatherData.name;
-    document.querySelector(".temp").textContent = weatherData.main.temp + "°C"
+    document.querySelector(".temp").textContent = Math.round(weatherData.main.temp) + "°C"
     document.querySelector(".humidity-value").textContent = weatherData.main.humidity + "%";
     document.querySelector(".wind-value").textContent = weatherData.wind.speed + " Km/h";
 
@@ -28,4 +28,11 @@ const searchBtn = document.querySelector(".search-button");
 searchBtn.addEventListener('click', (event) => {
     cityName = document.querySelector(".search-bar").value;
     getWeather(cityName);
+})
+const searchBar = document.querySelector(".search-bar")
+searchBar.addEventListener('keypress', (event) => {
+    if(event.key === "Enter") {
+        cityName = document.querySelector(".search-bar").value;
+        getWeather(cityName);
+    }
 })
