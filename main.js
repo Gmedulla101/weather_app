@@ -1,6 +1,14 @@
 const getWeather = async (cityName) => {
     const apiKey = "d8781c91cd5807e099ef7078a40ecfe6"
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`);
+
+    if (response.status === 404) {
+        document.querySelector(".city-name").textContent = "Invalid city name"
+        document.querySelector(".temp").textContent = "N/A"
+        document.querySelector(".humidity-value").textContent = "N/A"
+        document.querySelector(".wind-value").textContent = "N/A"
+    }
+
     const weatherData = await response.json();
 
     //DYNAMICALLY CHANGING THE CONTENTS OF THE WEATHER INFORMATION
@@ -28,11 +36,13 @@ const searchBtn = document.querySelector(".search-button");
 searchBtn.addEventListener('click', (event) => {
     cityName = document.querySelector(".search-bar").value;
     getWeather(cityName);
+    searchBar.value = "";
 })
 const searchBar = document.querySelector(".search-bar")
 searchBar.addEventListener('keypress', (event) => {
     if(event.key === "Enter") {
         cityName = document.querySelector(".search-bar").value;
         getWeather(cityName);
+        searchBar.value = "";
     }
 })
